@@ -4,8 +4,11 @@ import {
   ViewChild,
   AfterViewInit,
   OnDestroy,
-  NgZone
+  NgZone,
+  Inject,
+  PLATFORM_ID
 } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-inicio',
@@ -20,10 +23,19 @@ export class Inicio implements AfterViewInit, OnDestroy {
   private arrastrando = false;
   private inicioX = 0;
   private scrollInicial = 0;
+  private esNavegador: boolean;
 
-  constructor(private ngZone: NgZone) {}
+  constructor(
+    private ngZone: NgZone,
+    @Inject(PLATFORM_ID) platformId: Object
+  ) {
+    this.esNavegador = isPlatformBrowser(platformId);
+  }
 
   ngAfterViewInit(): void {
+    // Solo ejecutamos código de navegador si estamos en el navegador
+    if (!this.esNavegador) return;
+
     const carrusel = this.carruselRef.nativeElement;
 
     // Arrastre con ratón (para que también se pueda arrastrar en escritorio)
@@ -33,6 +45,8 @@ export class Inicio implements AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    if (!this.esNavegador) return;
+
     const carrusel = this.carruselRef?.nativeElement;
     if (carrusel) {
       carrusel.removeEventListener('mousedown', this.onMouseDown);
