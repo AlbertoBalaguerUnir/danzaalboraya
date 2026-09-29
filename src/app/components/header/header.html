@@ -1,0 +1,47 @@
+<header class="header">
+  <div class="header-inner">
+
+    <div class="logo-div">
+      <img src="assets/logo_tr.png" alt="Escuela de Danza" class="logo">
+    </div>
+
+    <!-- Botón hamburguesa: solo visible en móvil -->
+    <button
+      class="menu-toggle"
+      (click)="toggleMenu()"
+      [class.abierto]="menuAbierto"
+      aria-label="Abrir menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="nav-menu" [class.abierto]="menuAbierto">
+
+      <a routerLink="/inicio" class="nav-link" (click)="cerrarMenu()">INICIO</a>
+
+      <div class="nav-item-dropdown">
+        <a routerLink="/actividades" class="nav-link">
+          ACTIVIDADES <span class="flecha">▾</span>
+        </a>
+        <div class="dropdown-menu">
+          <a routerLink="/danzaclasica" class="dropdown-link" (click)="cerrarMenu()">Danza Clásica</a>
+          <a routerLink="/danzaurbana" class="dropdown-link" (click)="cerrarMenu()">Danza Urbana</a>
+          <a routerLink="/predanza" class="dropdown-link" (click)="cerrarMenu()">Predanza</a>
+          <a routerLink="/fitkid" class="dropdown-link" (click)="cerrarMenu()">Fitkid</a>
+          <a routerLink="/bodytonic" class="dropdown-link" (click)="cerrarMenu()">Body Tonic</a>
+          <a routerLink="/latinos" class="dropdown-link" (click)="cerrarMenu()">Latinos</a>
+          <a routerLink="/competicion" class="dropdown-link" (click)="cerrarMenu()">Competición Urbana</a>
+          <a routerLink="/barre" class="dropdown-link" (click)="cerrarMenu()">Barre</a>
+        </div>
+      </div>
+
+      <a routerLink="/horario-precios" class="nav-link" (click)="cerrarMenu()">HORARIO Y PRECIOS</a>
+      <a routerLink="/contacto" class="nav-link" (click)="cerrarMenu()">CONTACTO</a>
+
+      <app-social-icons variante="header"></app-social-icons>
+
+    </nav>
+
+  </div>
+</header>

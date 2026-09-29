@@ -1,0 +1,63 @@
+<div class="wrapper">
+
+  <!-- Banner frontal -->
+  <section class="banner" [style.background-image]="'url(assets/' + imagenBanner + ')'">
+    <div class="banner-overlay">
+      <h1 class="banner-titulo" [style.font-family]="fuenteTitulo">{{ titulo }}</h1>
+    </div>
+  </section>
+
+  <!-- Contenido principal: dos columnas -->
+  <section class="contenido" [class.sin-foto]="!imagenLateral">
+
+    <div class="columna-izquierda">
+      <p class="subtitulo" [innerHTML]="subtitulo"></p>
+      <p class="intro">{{ intro }}</p>
+
+      <!-- Título común de modalidades -->
+      <p class="intro-modalidades"
+        *ngIf="tituloModalidades && (modalidades.length > 0 || modalidadesConIcono.length > 0)">
+        {{ tituloModalidades }}
+      </p>
+
+      <!-- Modalidades con icono (grid) -->
+      <div *ngIf="modalidadesConIcono.length > 0" class="grid-modalidades" [style.--columnas]="columnasGrid">
+        <div class="tarjeta-modalidad" *ngFor="let modalidad of modalidadesConIcono">
+          <img [src]="'assets/iconos/' + modalidad.icono + '.png'" [alt]="modalidad.titulo" class="icono-modalidad">
+          <h3 class="titulo-modalidad">{{ modalidad.titulo }}</h3>
+          <p class="descripcion-modalidad">{{ modalidad.descripcion }}</p>
+        </div>
+      </div>
+
+      <!-- Grupos -->
+      <div *ngIf="grupos.length > 0" class="bloque-grupos">
+        <h2 class="titulo-grupos">{{ tituloGrupos }}</h2>
+        <div class="grupo" *ngFor="let grupo of grupos">
+          <h3 class="grupo-titulo">{{ grupo.titulo }}</h3>
+          <p class="grupo-descripcion">{{ grupo.descripcion }}</p>
+          <p *ngIf="grupo.complemento" class="grupo-complemento">{{ grupo.complemento }}</p>
+        </div>
+      </div>
+
+      <!-- Modalidades desplegables -->
+      <div *ngIf="modalidades.length > 0" class="modalidades">
+        <details class="modalidad" *ngFor="let modalidad of modalidades">
+          <summary class="modalidad-titulo">{{ modalidad.titulo }}</summary>
+          <div class="modalidad-contenido">
+            <div class="seccion" *ngFor="let seccion of modalidad.secciones">
+              <h4 class="seccion-pregunta">{{ seccion.pregunta }}</h4>
+              <p class="seccion-respuesta">{{ seccion.respuesta }}</p>
+            </div>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <!-- Columna derecha (solo si hay foto) -->
+    <div class="columna-derecha" *ngIf="imagenLateral">
+      <img [src]="'assets/' + imagenLateral" [alt]="titulo" class="foto-lateral">
+    </div>
+
+  </section>
+
+</div>

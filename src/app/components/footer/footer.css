@@ -1,0 +1,16 @@
+.footer {
+  text-align: center;
+}
+
+.social-wrapper {
+  padding: 30px 0 25px;
+  background-color: white;
+  border-bottom: 1px solid #fce4ec;
+}
+
+.copyright {
+  padding: 15px;
+  background-color: #fce4ec;
+  color: #787478;
+  font-size: 14px;
+}

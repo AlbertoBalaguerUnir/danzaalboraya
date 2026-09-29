@@ -1,0 +1,333 @@
+.wrapper {
+  width: 85%;
+  max-width: var(--ancho-contenido);
+  margin: 40px auto;
+}
+
+
+/* ============================
+   BANNER FRONTAL
+   ============================ */
+.banner {
+  width: 100%;             /* del wrapper, no del viewport */
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  border-radius: 8px;      /* bordes curvos */
+  overflow: hidden;         /* para que el overlay también quede curvo */
+  margin-bottom: 30px;      /* separación con el contenido de abajo */
+}
+
+.banner-overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+
+.banner-titulo {
+  color: rgb(255, 255, 255);
+  font-weight: 400;
+  font-size: 4rem;
+  text-align: left;
+  text-shadow: 2px 2px 14px rgba(0, 0, 0, 0.747);
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+/* ============================
+   CONTENIDO EN DOS COLUMNAS
+   ============================ */
+
+.contenido {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr;
+  gap: clamp(30px, 5vw, 70px);
+  padding: clamp(30px, 2vw, 50px);
+  border: 1px solid #ebbfdf;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+/* Cuando no hay foto, la columna izquierda ocupa todo el ancho */
+.contenido.sin-foto {
+  grid-template-columns: 1fr;
+}
+
+/* Columna izquierda */
+.columna-izquierda {
+  display: flex;
+  flex-direction: column;
+}
+
+.subtitulo {
+  font-family: 'Roboto Thin';
+  letter-spacing: 0.05rem;
+  font-size: 14px;
+  font-weight: 600;
+  color: #d572d5;
+  margin: 0 0 10px 0;
+  text-transform: uppercase; 
+}
+
+.intro {
+  font-family: 'Roboto Thin';
+  font-size: 14px;
+  letter-spacing: 0.05rem;
+  font-weight: 400;
+  color: #716975;
+  margin: 0 0 10px 0;
+}
+
+/* ============================
+   BLOQUE DE GRUPOS
+   ============================ */
+.bloque-grupos {
+  margin-top: 40px;
+}
+
+.titulo-grupos {
+  font-family: 'Roboto Thin';
+  font-size: 14px;
+  letter-spacing: 0.1rem;
+  color: #716975;
+  margin: 0 0 20px 0;
+}
+
+.grupo {
+  font-family: 'Roboto Thin';
+  font-size: 14px;
+  margin-bottom: 30px;
+  padding-left: 20px;
+  border-left: 4px solid #f079d0;
+}
+
+.grupo-titulo {
+  font-size: 14px;
+  font-weight: 400;
+  color: #d572d5;
+  margin: 0 0 8px 0;
+  font-weight: 700;
+}
+
+.grupo-descripcion {
+  font-size: 14px;
+  color: #444;
+  margin: 0 0 8px 0;
+  line-height: 1.5;
+}
+
+.grupo-complemento {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #888;
+  margin: 0;
+}
+
+/* ============================
+   MODALIDADES DESPLEGABLES
+   ============================ */
+.modalidades {
+  margin-top: 40px;
+}
+
+.intro-modalidades {
+  font-family: 'Roboto Thin';
+  letter-spacing: 0.08rem;
+  font-size: 14px;
+  font-weight: 600;
+  color: #716975;
+  margin: 0 0 10px 0;
+}
+
+.modalidad {
+  margin-bottom: 14px;
+  border: 1px solid #f0c8de;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.modalidad-titulo {
+  padding: 15px 45px 15px 20px;
+  font-family: 'Roboto Thin';
+  font-size: 14px;
+  letter-spacing: 0.05rem;
+  font-weight: 600;
+  color: #d572d5;
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+  transition: background-color 0.2s;
+}
+
+.modalidad-titulo::-webkit-details-marker {
+  display: none;
+}
+
+.modalidad-titulo::after {
+  content: "▾";
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  transition: transform 0.3s;
+}
+
+.modalidad[open] .modalidad-titulo::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.modalidad-titulo:hover {
+  background-color: #fce4ec;
+}
+
+.modalidad-contenido {
+  padding: 20px 25px;
+  border-top: 1px solid #f0c8de;
+  background-color: #fdf5f9;
+}
+
+.seccion {
+  margin-bottom: 20px;
+}
+
+.seccion:last-child {
+  margin-bottom: 0;
+}
+
+.seccion-pregunta {
+  font-size: 1rem;
+  color: #d572d5;
+  margin: 0 0 8px 0;
+  font-weight: 700;
+}
+
+.seccion-respuesta {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ============================
+   MODALIDADES CON ICONO (GRID)
+   ============================ */
+.grid-modalidades {
+  display: grid;
+  grid-template-columns: repeat(var(--columnas, 3), 1fr);
+  gap: 25px;
+  margin-top: 10px;
+}
+
+.tarjeta-modalidad {
+  background-color: #fdf5f9;
+  border: 1px solid #f5cee3;
+  border-radius: 5px;
+  padding: 25px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tarjeta-modalidad:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(216, 70, 146, 0.15);
+}
+
+.icono-modalidad {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: -3px 3px 8px rgba(0, 0, 0, 0.306);
+}
+
+.titulo-modalidad {
+  font-size: 14px;
+  font-weight: 700;
+  color: #716975;
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.descripcion-modalidad {
+  font-size: 14px;
+  color: #786b6b;
+  line-height: 1.5;
+  text-align:initial;
+  margin: 0;
+}
+
+
+/* ============================
+   COLUMNA DERECHA (FOTO)
+   ============================ */
+.columna-derecha {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.foto-lateral {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  display: block;
+}
+
+/* ============================
+   RESPONSIVE
+   ============================ */
+@media (max-width: 900px) {
+  .banner {
+    height: 280px;
+  }
+
+  .icono-modalidad {
+    width: 80px;
+    height: 80px;
+  }
+
+  .banner-overlay {
+    padding: 20px 30px;
+  }
+
+  .banner-titulo {
+    font-size: 3rem;
+  }
+
+  .contenido {
+    grid-template-columns: 1fr;
+  }
+
+  .columna-derecha {
+    order: -1;
+  }
+
+  .modalidad-titulo {
+    font-size: 0.95rem;
+    padding: 12px 40px 12px 15px;
+  }
+
+  .modalidad-contenido {
+    padding: 15px 18px;
+  }
+
+  .grid-modalidades {
+  grid-template-columns: 1fr;
+  }
+}

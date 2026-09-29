@@ -1,0 +1,17 @@
+.wrapper-horarios {
+  width: 75%;
+  max-width: var(--ancho-contenido);
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.img-horarios,
+.img-precios {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}

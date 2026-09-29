@@ -1,0 +1,238 @@
+/* Imagen fija de portada, posicionada en el top de la página y detrás de todo */
+.portadaimg {
+  position: absolute;              /* sale del flujo normal */
+  top: 0;                          /* pegado al top de la página */
+  left: 0;
+  width: 100%;
+  height: 80vh;
+  background-image: url('/assets/fondo1.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  z-index: -1;                     /* se coloca por detrás del header y contenido */
+}
+
+/* El contenido empieza justo debajo de la portada */
+.contenido-inicio {
+  position: relative;              /* necesario para que se pinte por encima del z-index:-1 */
+  margin-top: 60vh;                /* deja hueco para la portada, que es absolute */
+  background-color: rgb(255, 255, 255);
+  padding: 10px 0;
+}
+
+.bienvenida {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 20px;
+}
+
+/*
+.bienvenida h1 {
+  font-family: 'Gwendolyn', cursive;
+  font-weight: 650;
+  font-size: 3.25rem;
+  color: #e7b6da;
+  text-align: center;
+  margin: 0 0 20px 0;
+}
+*/
+.bienvenida h1 {
+  font-family: 'Roboto Thin';
+  font-weight: 210;
+  font-size: 1.7rem;
+  text-transform: uppercase;
+  transform: scaleY(1.2);
+  letter-spacing: 12px;
+  color: #bfa6bf;
+  text-align: center;
+  margin: 10px 0 15px 0;
+}
+
+.bienvenida .subtitulo {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.1rem;
+  color: #bfa6bf;
+  font-style: normal;
+  letter-spacing: 4px;
+  margin: 1px 0 1px 0;
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 50px 40px;
+  background-color: #fce4ec;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.item-galeria {
+  text-align: center;
+}
+
+.item-galeria img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.item-galeria img:hover {
+  transform: scale(1.05);
+}
+
+.pie-foto {
+  margin-top: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  color: #333;
+}
+
+/* ============================
+   CARRUSEL
+   ============================ */
+.carrusel-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 40px 0;
+  background-color: #f6eaee;
+}
+
+/* Flechas */
+.carrusel-flecha {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background-color: #ffffff;
+  color: #ae85ae;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s, color 0.3s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carrusel-flecha:hover {
+  background-color: #e6b2e6;
+  color: #ffffff;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.flecha-izq {
+  left: 20px;
+}
+
+.flecha-der {
+  right: 20px;
+}
+
+/* Ventana del carrusel */
+.carrusel {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  cursor: grab;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  user-select: none;
+  scroll-behavior: smooth;      /* desplazamiento suave al pulsar flechas */
+  padding: 0 40px;              /* espacio para que las imágenes no toquen las flechas */
+}
+
+.carrusel::-webkit-scrollbar {
+  display: none;
+}
+
+.carrusel:active {
+  cursor: grabbing;
+}
+
+.carrusel-track {
+  display: flex;
+  gap: 30px;
+  width: max-content;
+}
+
+.carrusel-item {
+  flex: 0 0 auto;
+  width: 280px;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.carrusel-item img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.32);
+  transition: transform 0.3s ease;
+  pointer-events: none;
+}
+
+.carrusel-item .pie-foto {
+  margin-top: 12px;
+  font-family: 'Roboto Thin';
+  transform: scaleY(1.2);
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 4px;
+  color: #a984a9;
+  pointer-events: none;
+}
+
+/* ============================
+   RESPONSIVE
+   ============================ */
+@media (max-width: 900px) {
+  .carrusel {
+    padding: 0 20px;
+    /* En móvil no forzamos scroll-behavior smooth para que el swipe sea natural */
+    scroll-behavior: auto;
+  }
+
+  .carrusel-track {
+    gap: 20px;
+  }
+
+  .carrusel-item {
+    width: 220px;
+  }
+
+  .carrusel-item img {
+    height: 260px;
+  }
+
+  /* Flechas más pequeñas en móvil */
+  .carrusel-flecha {
+    display: none;
+    width: 38px;
+    height: 38px;
+    font-size: 14px;
+  }
+
+  .flecha-izq {
+    left: 8px;
+  }
+
+  .flecha-der {
+    right: 8px;
+  }
+}

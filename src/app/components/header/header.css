@@ -1,0 +1,286 @@
+.header {
+  background-color: #ffffffeb;
+  width: 100%;
+  position: relative;              /* se sitúa por encima de la imagen */
+  z-index: 1;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  width: 85%;
+  max-width: var(--ancho-contenido);
+  margin: 0 auto;
+}
+
+.logo {
+  height: 100px;
+  width: auto;
+  display: block;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(25px, 5vw, 100px);
+  flex: 1;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  margin-left: clamp(10px, 5vw, 120px);
+}
+
+.nav-link {
+  font-family: 'Roboto Thin';
+  text-decoration: none;
+  color: #c48fb6;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 1px;
+  transition: color 0.5s;
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  color: #b37494;
+  font-weight: 500;
+}
+
+.btn-matricula {
+  background-color: #ffffff;
+  color:  #e386ca;
+  border: 1px solid  #e386ca;
+  padding: 10px 25px;
+  border-radius: 5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 13px;
+  cursor: pointer;
+  box-shadow: -3px 3px 6px rgba(0, 0, 0, 0.198);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, color 0.4s;
+  cursor: pointer;
+}
+
+.btn-matricula:hover {
+  transform: scale(1.02);
+  box-shadow: -4px 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+  color: #b44b81;
+  border-color: #b44b81;;
+}
+
+/* ============================
+   DROPDOWN DE ACTIVIDADES
+   ============================ */
+
+.nav-item-dropdown {
+  position: relative;
+}
+
+.flecha {
+  font-size: 10px;
+  margin-left: 2px;
+  display: inline-block;
+  transition: transform 0.3s;
+}
+
+.nav-item-dropdown:hover .flecha {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  min-width: 220px;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  padding: 10px 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s;
+  z-index: 100;
+}
+
+/* Puente invisible para que no se cierre al mover el ratón */
+.dropdown-menu::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  height: 10px;
+}
+
+.nav-item-dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+.dropdown-link {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #a08a9c;
+  font-family: 'Roboto Thin';
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: background-color 0.2s, color 0.2s, padding-left 0.2s;
+  cursor: pointer;
+}
+
+.dropdown-link:hover {
+  background-color: #fce4ec;
+  color: #d84692;
+  padding-left: 26px;
+}
+
+/* ============================
+   BOTÓN HAMBURGUESA
+   (oculto en escritorio)
+   ============================ */
+.menu-toggle {
+  display: none;               /* oculto por defecto */
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-right: 30px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  z-index: 110;               /* por encima del menú desplegado */
+}
+
+.menu-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: #c48fb6;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Animación: al abrir, las 3 líneas se transforman en una X */
+.menu-toggle.abierto span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.abierto span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.abierto span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ============================
+   RESPONSIVE: MÓVIL
+   ============================ */
+@media (max-width: 900px) {
+
+  .header-inner {
+    padding: 10px 20px;
+    width: 100%;
+    position: relative;
+  }
+
+  .logo {
+    height: 60px;             /* logo más pequeño en móvil */
+  }
+
+  /* Mostrar el botón hamburguesa */
+  .menu-toggle {
+    display: flex;
+  }
+
+  /* El menú se convierte en un panel desplegable */
+  .nav-menu {
+    position: absolute;
+    top: 100%;                /* pegado debajo del header */
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0;
+    margin-left: 0;
+    background-color: #ffffff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    padding: 15px 0;
+    max-height: 0;            /* cerrado por defecto */
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    z-index: 100;
+  }
+
+  .nav-menu.abierto {
+    max-height: 600px;        /* altura máxima al abrir */
+    padding: 15px 0;
+  }
+
+  /* Enlaces en vertical */
+  .nav-link {
+    padding: 12px 25px;
+    font-size: 15px;
+    text-align: left;
+    border-bottom: 1px solid #f4e4ee;
+  }
+
+  .nav-link:hover {
+    background-color: #fce4ec;
+  }
+
+  /* Dropdown de ACTIVIDADES: en móvil se muestra siempre abierto dentro del panel */
+  .nav-item-dropdown {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-item-dropdown > .nav-link {
+    border-bottom: 1px solid #f4e4ee;
+  }
+
+  .dropdown-menu {
+    position: static;          /* ya no es absoluto */
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    box-shadow: none;
+    background-color: #fdf5f9;
+    border-radius: 0;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  /* Al hacer hover en el contenedor, en móvil mostramos el submenú */
+  .nav-item-dropdown:hover .dropdown-menu,
+  .nav-item-dropdown:active .dropdown-menu {
+    max-height: 500px;
+  }
+
+  .dropdown-link {
+    padding: 10px 40px;
+    font-size: 13px;
+    text-align: left;
+  }
+
+  /* Iconos sociales dentro del menú móvil */
+  app-social-icons {
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+  }
+}

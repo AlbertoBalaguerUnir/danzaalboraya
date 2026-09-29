@@ -1,0 +1,187 @@
+.wrapper-contacto {
+  width: 85%;
+  max-width: var(--ancho-contenido);
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Mapa */
+.mapa-container {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.mapa {
+  width: 100%;
+  height: 300px;
+  border: 0;
+  display: block;
+}
+
+/* Grid de dos columnas: SIN align-items: start → se estiran a la misma altura */
+.info-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  /* Sin align-items: cada bloque se estira a la altura del más alto */
+}
+
+.bloque-info {
+  background-color: #ffffff;
+  border: 1px solid #1565c0;
+  border-radius: 8px;
+  padding: 30px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.titulo-info {
+  font-family: 'Roboto Thin';
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  color: #1565c0;
+  margin: 0 0 20px 0;
+  text-transform: uppercase;
+}
+
+.bloque-info p {
+  font-family: 'Roboto Thin';
+  font-size: 14px;
+  letter-spacing: 0.05rem;
+  color: #716975;
+  margin: 0 0 10px 0;
+  line-height: 1.6;
+}
+
+.bloque-info p:last-child {
+  margin-bottom: 0;
+}
+
+.bloque-info a {
+  color: #716975;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.bloque-info a:hover {
+  color: #1565c0;
+}
+
+.redes {
+  display: flex;
+  gap: 20px;
+  margin-top: 15px !important;
+}
+
+.redes a {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 0.05rem;
+}
+
+/* ============================
+   DESPLEGABLE: PROTECCIÓN DE DATOS
+   (ahora con su propio borde, como las columnas)
+   ============================ */
+.privacidad {
+  width: 100%;
+  background-color: #ffffff;
+  border: 1px solid #1565c0;
+  border-radius: 8px;
+  box-sizing: border-box;
+  overflow: hidden;               /* para que las esquinas redondeadas recorten el contenido */
+}
+
+.privacidad-titulo {
+  padding: 20px 45px 20px 30px;
+  font-family: 'Roboto Thin';
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  color: #1565c0;
+  text-transform: uppercase;
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.privacidad-titulo::-webkit-details-marker {
+  display: none;
+}
+
+.privacidad-titulo::after {
+  content: "▾";
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  transition: transform 0.3s;
+}
+
+.privacidad[open] .privacidad-titulo::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.privacidad-titulo:hover {
+  background-color: #f0f6fd;      /* azul muy clarito al hover */
+}
+
+.privacidad-contenido {
+  padding: 0 30px 25px 30px;
+}
+
+.privacidad-contenido p {
+  font-family: 'Roboto Thin';
+  font-size: 14px;
+  letter-spacing: 0.05rem;
+  color: #716975;
+  line-height: 1.6;
+  margin: 0 0 12px 0;
+}
+
+.privacidad-contenido p:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .wrapper-contacto {
+    width: 95%;
+    gap: 25px;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .bloque-info {
+    padding: 20px;
+  }
+
+  .mapa {
+    height: 250px;
+  }
+
+  .privacidad-titulo {
+    padding: 15px 40px 15px 20px;
+  }
+
+  .privacidad-titulo::after {
+    right: 20px;
+  }
+
+  .privacidad-contenido {
+    padding: 0 20px 20px 20px;
+  }
+}
