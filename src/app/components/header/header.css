@@ -80,6 +80,18 @@
   position: relative;
 }
 
+/* Quitar el cursor de enlace y el hover por defecto del propio span */
+.nav-link-no-click {
+  cursor: default;
+}
+
+/* Cuando el ratón está sobre el contenedor (dropdown abierto),
+   el texto ACTIVIDADES se resalta como cualquier otro link */
+.nav-item-dropdown:hover .nav-link-no-click {
+  color: #b37494;
+  font-weight: 500;
+}
+
 .flecha {
   font-size: 10px;
   margin-left: 2px;
