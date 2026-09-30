@@ -1,7 +1,8 @@
 .header {
   background-color: #ffffffeb;
   width: 100%;
-  position: relative;              /* se sitúa por encima de la imagen */
+  position: relative;
+  /* se sitúa por encima de la imagen */
   z-index: 1;
 }
 
@@ -45,14 +46,14 @@
 }
 
 .nav-link:hover {
-  color: #b37494;
-  font-weight: 500;
+  color: #aa698e;
+  font-weight: 600;
 }
 
 .btn-matricula {
   background-color: #ffffff;
-  color:  #e386ca;
-  border: 1px solid  #e386ca;
+  color: #e386ca;
+  border: 1px solid #e386ca;
   padding: 10px 25px;
   border-radius: 5px;
   font-weight: 600;
@@ -69,7 +70,8 @@
   box-shadow: -4px 4px 8px rgba(0, 0, 0, 0.2);
   background-color: #ffffff;
   color: #b44b81;
-  border-color: #b44b81;;
+  border-color: #b44b81;
+  ;
 }
 
 /* ============================
@@ -88,8 +90,8 @@
 /* Cuando el ratón está sobre el contenedor (dropdown abierto),
    el texto ACTIVIDADES se resalta como cualquier otro link */
 .nav-item-dropdown:hover .nav-link-no-click {
-  color: #b37494;
-  font-weight: 500;
+  color: #aa698e;
+  font-weight: 600;
 }
 
 .flecha {
@@ -159,7 +161,8 @@
    (oculto en escritorio)
    ============================ */
 .menu-toggle {
-  display: none;               /* oculto por defecto */
+  display: none;
+  /* oculto por defecto */
   width: 40px;
   height: 40px;
   background: transparent;
@@ -171,7 +174,8 @@
   justify-content: center;
   align-items: center;
   gap: 5px;
-  z-index: 110;               /* por encima del menú desplegado */
+  z-index: 110;
+  /* por encima del menú desplegado */
 }
 
 .menu-toggle span {
@@ -208,7 +212,8 @@
   }
 
   .logo {
-    height: 60px;             /* logo más pequeño en móvil */
+    height: 60px;
+    /* logo más pequeño en móvil */
   }
 
   /* Mostrar el botón hamburguesa */
@@ -219,7 +224,8 @@
   /* El menú se convierte en un panel desplegable */
   .nav-menu {
     position: absolute;
-    top: 100%;                /* pegado debajo del header */
+    top: 100%;
+    /* pegado debajo del header */
     left: 0;
     right: 0;
     flex-direction: column;
@@ -230,14 +236,16 @@
     background-color: #ffffff;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
     padding: 15px 0;
-    max-height: 0;            /* cerrado por defecto */
+    max-height: 0;
+    /* cerrado por defecto */
     overflow: hidden;
     transition: max-height 0.4s ease, padding 0.4s ease;
     z-index: 100;
   }
 
   .nav-menu.abierto {
-    max-height: 600px;        /* altura máxima al abrir */
+    max-height: 600px;
+    /* altura máxima al abrir */
     padding: 15px 0;
   }
 
@@ -249,8 +257,10 @@
     border-bottom: 1px solid #f4e4ee;
   }
 
-  .nav-link:hover {
+   .nav-link:hover {
     background-color: #fce4ec;
+    color: #8a4d70;      
+    font-weight: 600;
   }
 
   /* Dropdown de ACTIVIDADES: en móvil se muestra siempre abierto dentro del panel */
@@ -259,12 +269,13 @@
     flex-direction: column;
   }
 
-  .nav-item-dropdown > .nav-link {
+  .nav-item-dropdown>.nav-link {
     border-bottom: 1px solid #f4e4ee;
   }
 
   .dropdown-menu {
-    position: static;          /* ya no es absoluto */
+    position: static;
+    /* ya no es absoluto */
     transform: none;
     opacity: 1;
     visibility: visible;

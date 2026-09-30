@@ -15,7 +15,7 @@
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
-  border-radius: 8px;      /* bordes curvos */
+  border-radius: 5px;      /* bordes curvos */
   overflow: hidden;         /* para que el overlay también quede curvo */
   margin-bottom: 30px;      /* separación con el contenido de abajo */
 }
@@ -51,7 +51,7 @@
   gap: clamp(30px, 5vw, 70px);
   padding: clamp(30px, 2vw, 50px);
   border: 1px solid #ebbfdf;
-  border-radius: 8px;
+  border-radius: 5px;
   box-sizing: border-box;
 }
 
@@ -284,8 +284,8 @@
   width: 100%;
   max-width: 500px;
   height: auto;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 0px;
+  box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.459);
   display: block;
 }
 
@@ -307,7 +307,7 @@
   }
 
   .banner-titulo {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 
   .contenido {

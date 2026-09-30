@@ -18,7 +18,6 @@ export class Header {
   cerrarMenu(): void {
     this.menuAbierto = false;
   }
-
   @HostListener('document:click', ['$event'])
   onClickFuera(event: MouseEvent): void {
     const target = event.target as HTMLElement;
@@ -27,4 +26,5 @@ export class Header {
       this.cerrarMenu();
     }
   }
+
 }
