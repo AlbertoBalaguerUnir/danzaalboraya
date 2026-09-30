@@ -11,7 +11,7 @@ export class Danzaclasica {
   titulo = 'Danza Clásica';
   fuenteTitulo = "'Gwendolyn', cursive";
   subtitulo = '¡La esencia más pura del ballet clásico!';
-  imagenBanner = 'banner-danzacl.png';
+  imagenBanner = 'banner-danzacl.jpg';
   imagenLateral = 'danzacl1.png';
   intro = 'Desde los 3 años y SIN LÍMITE DE EDAD.';
 

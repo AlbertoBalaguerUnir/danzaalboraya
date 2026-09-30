@@ -10,7 +10,7 @@ import { CategoriaLayout, Grupo, ModalidadConIcono } from '../../components/cate
 export class Competicion {
   titulo = 'Danza Urbana Competiciön';
   subtitulo = 'Entrena, mejora, compite y supera tus límites.';
-  imagenBanner = 'banner-comp.png';
+  imagenBanner = 'banner-comp.jpg';
   intro = '¡Tu esfuerzo también se baila!';
   fuenteTitulo = "'Urban'";
   tituloModalidades = '¿Qué te ofrecemos?';
