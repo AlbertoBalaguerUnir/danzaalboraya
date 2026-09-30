@@ -11,7 +11,7 @@ export class Latinos {
   titulo = 'Bailes latinos, baile en línea y CUBBÁ';
   subtitulo = '¡Ritmo, energía y buena vibra!';
   tituloGrupos = '¿Por qué apuntarte a Bailes Latinos?';
-  imagenBanner = 'banner-latin.png';
+  imagenBanner = 'banner-latin.jpg';
   intro = 'Salsa, Bachata, Merengue...';
   fuenteTitulo = "'Casual'";
 

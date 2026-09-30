@@ -10,7 +10,7 @@ import { CategoriaLayout, Grupo, ModalidadConIcono } from '../../components/cate
 export class Fitkid {
   titulo = 'FITKID';
   subtitulo = '¡Baile deportivo con energía!';
-  imagenBanner = 'banner-fitkid.png';
+  imagenBanner = 'banner-fitkid.jpg';
   intro = 'Baile deportivo regulado por la FEBD, con posibilidad de competir, en el que trabajamos en torno a cuatro pilares fundamentales:';
   fuenteTitulo = "'kidsfont'";
   tituloGrupos = 'Sobre las clases:';

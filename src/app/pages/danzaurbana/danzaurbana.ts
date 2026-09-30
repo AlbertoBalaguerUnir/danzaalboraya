@@ -11,7 +11,7 @@ export class Danzaurbana {
   titulo = 'Danza urbana';
   fuenteTitulo = "'Urban'";
   subtitulo = '¡Disfruta del street dance en el aula!';
-  imagenBanner = 'banner-danzaurb.png';
+  imagenBanner = 'banner-danzaurb.jpg';
   imagenLateral = 'danzaurb1.png';
   intro = 'Desde los 3 años y SIN LÍMITE DE EDAD.';
 

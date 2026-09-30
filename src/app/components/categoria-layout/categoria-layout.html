@@ -23,7 +23,7 @@
       <!-- Modalidades con icono (grid) -->
       <div *ngIf="modalidadesConIcono.length > 0" class="grid-modalidades" [style.--columnas]="columnasGrid">
         <div class="tarjeta-modalidad" *ngFor="let modalidad of modalidadesConIcono">
-          <img [src]="'assets/iconos/' + modalidad.icono + '.png'" [alt]="modalidad.titulo" class="icono-modalidad">
+          <img [src]="'assets/iconos/' + modalidad.icono + '.jpg'" [alt]="modalidad.titulo" class="icono-modalidad">
           <h3 class="titulo-modalidad">{{ modalidad.titulo }}</h3>
           <p class="descripcion-modalidad">{{ modalidad.descripcion }}</p>
         </div>

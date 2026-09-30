@@ -10,7 +10,7 @@ import { CategoriaLayout, Grupo, ModalidadConIcono } from '../../components/cate
 export class Predanza {
   titulo = 'Pre danza: Baby Ballet / Urban Kids';
   subtitulo = '¡Primeros pasos en el baile!';
-  imagenBanner = 'banner-predanza.png';
+  imagenBanner = 'banner-predanza.jpg';
   intro = 'Las primeras clases de danza para los más peques de la casa.';
   fuenteTitulo = "'Kidsfont'";
   tituloGrupos = 'Nuestras categorías:';

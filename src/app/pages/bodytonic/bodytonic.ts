@@ -10,7 +10,7 @@ import { CategoriaLayout, Grupo, ModalidadConIcono } from '../../components/cate
 export class Bodytonic {
   titulo = 'body tonic';
   subtitulo = '¡Fuerza, energía, tu mejor versión!';
-  imagenBanner = 'banner-bodytonic.png';
+  imagenBanner = 'banner-bodytonic.jpg';
   imagenLateral = '';
   intro = 'Contamos con 6 modalidades';
   tituloModalidades = '';
