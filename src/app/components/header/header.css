@@ -235,7 +235,6 @@
     margin-left: 0;
     background-color: #ffffff;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-    padding: 15px 0;
     max-height: 0;
     /* cerrado por defecto */
     overflow: hidden;

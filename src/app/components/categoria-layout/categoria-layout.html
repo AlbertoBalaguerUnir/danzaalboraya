@@ -25,7 +25,7 @@
         <div class="tarjeta-modalidad" *ngFor="let modalidad of modalidadesConIcono">
           <img [src]="'assets/iconos/' + modalidad.icono + '.jpg'" [alt]="modalidad.titulo" class="icono-modalidad">
           <h3 class="titulo-modalidad">{{ modalidad.titulo }}</h3>
-          <p class="descripcion-modalidad">{{ modalidad.descripcion }}</p>
+          <p class="descripcion-modalidad" [innerHTML]="modalidad.descripcion"></p>
         </div>
       </div>
 

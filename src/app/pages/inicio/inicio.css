@@ -27,16 +27,7 @@
   margin: 0 auto 20px;
 }
 
-/*
-.bienvenida h1 {
-  font-family: 'Gwendolyn', cursive;
-  font-weight: 650;
-  font-size: 3.25rem;
-  color: #e7b6da;
-  text-align: center;
-  margin: 0 0 20px 0;
-}
-*/
+
 .bienvenida h1 {
   font-family: 'Roboto Thin';
   font-weight: 210;
@@ -206,6 +197,13 @@
     padding: 0 20px;
     /* En móvil no forzamos scroll-behavior smooth para que el swipe sea natural */
     scroll-behavior: auto;
+  }
+
+  .portadaimg {
+    background-attachment: scroll;   /* sin parallax en móvil */
+    background-size: cover;
+    background-position: center right;  
+    height: 80vh;                   
   }
 
   .carrusel-track {
