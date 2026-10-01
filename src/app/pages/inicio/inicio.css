@@ -202,7 +202,7 @@
   .portadaimg {
     background-attachment: scroll;   /* sin parallax en móvil */
     background-size: cover;
-    background-position: center right;  
+    background-position: center;  
     height: 80vh;                   
   }
 
