@@ -6,11 +6,7 @@
     </div>
 
     <!-- Botón hamburguesa: solo visible en móvil -->
-    <button
-      class="menu-toggle"
-      (click)="toggleMenu()"
-      [class.abierto]="menuAbierto"
-      aria-label="Abrir menú">
+    <button class="menu-toggle" (click)="toggleMenu()" [class.abierto]="menuAbierto" aria-label="Abrir menú">
       <span></span>
       <span></span>
       <span></span>
@@ -25,14 +21,15 @@
           ACTIVIDADES <span class="flecha">▾</span>
         </span>
         <div class="dropdown-menu">
-          <a routerLink="/danzaclasica" class="dropdown-link" (click)="cerrarMenu()">Danza Clásica</a>
-          <a routerLink="/danzaurbana" class="dropdown-link" (click)="cerrarMenu()">Danza Urbana</a>
           <a routerLink="/predanza" class="dropdown-link" (click)="cerrarMenu()">Predanza</a>
+          <a routerLink="/ballet-junior" class="dropdown-link" (click)="cerrarMenu()">Ballet Juvenil</a>
+          <a routerLink="/ballet-adultos" class="dropdown-link" (click)="cerrarMenu()">Ballet Adultos</a>
+          <a routerLink="/danzaurbana" class="dropdown-link" (click)="cerrarMenu()">Danza Urbana</a>
           <a routerLink="/fitkid" class="dropdown-link" (click)="cerrarMenu()">Fitkid</a>
-          <a routerLink="/bodytonic" class="dropdown-link" (click)="cerrarMenu()">Body Tonic</a>
-          <a routerLink="/latinos" class="dropdown-link" (click)="cerrarMenu()">Latinos</a>
-          <a routerLink="/competicion" class="dropdown-link" (click)="cerrarMenu()">Competición Urbana</a>
           <a routerLink="/barre" class="dropdown-link" (click)="cerrarMenu()">Barre</a>
+          <a routerLink="/bodytonic" class="dropdown-link" (click)="cerrarMenu()">Body Tonic</a>
+          <a routerLink="/latinos" class="dropdown-link" (click)="cerrarMenu()">Latinos/Cubbá</a>
+          <a routerLink="/competicion" class="dropdown-link" (click)="cerrarMenu()">Competición</a>
         </div>
       </div>
 

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CategoriaLayout, Grupo } from '../../components/categoria-layout/categoria-layout';
+import { CategoriaLayout, Grupo, ModalidadConIcono } from '../../components/categoria-layout/categoria-layout';
 
 @Component({
   selector: 'app-danzaclasica',
@@ -10,30 +10,61 @@ import { CategoriaLayout, Grupo } from '../../components/categoria-layout/catego
 export class Danzaclasica {
   titulo = 'Danza Clásica';
   fuenteTitulo = "'Gwendolyn', cursive";
-  subtitulo = '¡La esencia más pura del ballet clásico!';
+  subtitulo = 'Elegancia, técnica y bienestar';
   imagenBanner = 'banner-danzacl.jpg';
-  imagenLateral = 'danzacl1.jpg';
-  intro = 'Desde los 3 años y SIN LÍMITE DE EDAD.';
+  intro = 'Descubre la magia del ballet. Tenemos un espacio para ti, desde los primeros pasos hasta grandes sueños.';
+
+  // Título que aparecerá justo encima de los iconos
+  tituloModalidades = 'Beneficios del Ballet para Adultos:';
+  columnasGrid = 4;
 
   grupos: Grupo[] = [
     {
-      titulo: 'BABY BALLET: de 3 a 6 años aprox.',
-      descripcion: 'Iniciación al ballet para los/las más peques a través de actividades rítmico musicales que desarrollan sus funciones cognitivas y motrices.',
-      complemento: 'Puede complementarse con DANZA URBANA KIDS.'
+      titulo: 'BALLET JÓVENES: Niñas, Niños y Adolescentes',
+      descripcion: 'Desde los primeros pasos hasta grandes sueños. Mejora tu postura, tu coordinación y tu fuerza.',
+      complemento: `
+        <span class="punto-lista">
+          <img src="assets/iconos/check.jpg" alt="check" class="icono-texto"> Técnica clásica
+        </span>
+        <span class="punto-lista">
+          <img src="assets/iconos/check.jpg" alt="check" class="icono-texto"> Coreografías adaptadas a cada nivel
+        </span>
+        <span class="punto-lista">
+          <img src="assets/iconos/check.jpg" alt="check" class="icono-texto"> Trabajo en equipo y respeto
+        </span>
+        <span class="punto-lista">
+          <img src="assets/iconos/check.jpg" alt="check" class="icono-texto"> Una forma única de crecer
+        </span>
+        <strong class="invitacion">¡Ven a bailar con nosotros!</strong>
+      `
     },
     {
-      titulo: 'BALLET JUNIOR: de 6 a 9 años aprox.',
-      descripcion: 'Iniciación a la disciplina de la danza académica a través de la enseñanza básica de la metodología clásica.',
-      complemento: 'Puede complementarse con DANZA URBANA JUNIOR.'
+      titulo: 'BALLET ADULTOS: Todas las edades y niveles',
+      descripcion: 'No hace falta experiencia previa. Una disciplina que combina la técnica clásica con un enfoque adaptado al adulto, para que disfrutes del ballet a cualquier edad y nivel.',
+      complemento: 'Porque nunca es tarde para hacer lo que te hace bien.'
+    }
+  ];
+
+  modalidadesConIcono: ModalidadConIcono[] = [
+    {
+      icono: 'bdyt-3',
+      titulo: 'POSTURA Y ALINEACIÓN',
+      descripcion: 'Mejora la postura y la alineación corporal.'
     },
     {
-      titulo: 'BALLET JUVENIL: a partir de 10 años aprox.',
-      descripcion: 'Danza clásica académica y técnica de puntas.',
-      complemento: 'Puede complementarse con DANZA URBANA YOUTH.'
+      icono: 'crzn',
+      titulo: 'MENOS ESTRÉS',
+      descripcion: 'Reduce el estrés y aporta bienestar.'
     },
     {
-      titulo: 'BALLET PREMIUM: Iniciación, intermedio, avanzado y técnica de puntas.',
-      descripcion: 'Ballet para adultos sin límite de edad en todos los niveles. Tanto si quieres iniciarte en la práctica del ballet, como si quieres retomar tus entrenamientos o mejorar la técnica, estas clases son para ti.'
+      icono: 'brazo',
+      titulo: 'FUERZA Y MOVILIDAD',
+      descripcion: 'Aumenta la fuerza, la flexibilidad y la movilidad.'
+    },
+    {
+      icono: 'loto',
+      titulo: 'CONEXIÓN',
+      descripcion: 'Te ayuda a conectar con tu cuerpo y contigo misma/o.'
     }
   ];
 }
