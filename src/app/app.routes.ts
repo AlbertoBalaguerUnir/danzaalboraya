@@ -9,7 +9,6 @@ import { Competicion } from './pages/competicion/competicion';
 // Categorías de baile
 import { BalletJunior } from './pages/ballet-junior/ballet-junior';
 import { BalletAdultos } from './pages/ballet-adultos/ballet-adultos';
-import { Danzaclasica } from './pages/danzaclasica/danzaclasica';
 import { Danzaurbana } from './pages/danzaurbana/danzaurbana';
 import { Barre } from './pages/barre/barre';
 import { Bodytonic } from './pages/bodytonic/bodytonic';
@@ -28,7 +27,6 @@ export const routes: Routes = [
   // Categorías de baile
   { path: 'ballet-junior', component: BalletJunior },
   { path: 'ballet-adultos', component: BalletAdultos },
-  { path: 'danzaclasica', component: Danzaclasica },
   { path: 'danzaurbana', component: Danzaurbana },
   { path: 'barre', component: Barre },
   { path: 'bodytonic', component: Bodytonic},
